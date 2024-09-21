@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #0f0214;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+/* Para WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del track del scrollbar */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000; /* Color del thumb del scrollbar */
+  border-radius: 6px; /* Bordes redondeados para el thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000; /* Color del thumb al pasar el mouse */
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------------------------ Sección Menú -------------------------------*/
+.cabecera {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+}
+
+.cabecera-logo {
+  max-width: 80px; /* Ajuste para pantallas pequeñas */
+}
+
+.cabecera-titulo {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.navegacion-lista {
+  display: none;
+}
+
+.navegacion-elemento a {
+  font-size: 0.9rem;
+}
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+  .cabecera {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cabecera-logo {
+    max-width: 100px;
+  }
+
+  .cabecera-titulo {
+    font-size: 1.5rem;
+  }
+
+  .navegacion-lista {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .navegacion-elemento a {
+    font-size: 1rem;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+  /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
+  .cabecera__titulo {
+    font-size: 1.8rem;
+  }
+
+  .navegacion__elemento a {
+    font-size: 1.1rem;
+  }
+}
