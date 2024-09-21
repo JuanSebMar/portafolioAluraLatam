@@ -6,6 +6,7 @@ body {
   background-color: #0f0214;
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 /* Para WebKit browsers */
 ::-webkit-scrollbar {
@@ -36,16 +37,19 @@ a {
   text-decoration: none;
   color: white;
 }
+#presentacion-component {
+  display: flex;
+  align-items: center;
+}
 .typing-effect {
   color: white;
   font-size: 3rem;
   font-family: monospace;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid black;
   width: 0;
   line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
-  animation: typing 4s steps(30, end) infinite, blink 0.75s step-end infinite;
+  animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
 }
 @keyframes typing {
   0% {
@@ -96,8 +100,127 @@ a {
 .navegacion-elemento a {
   font-size: 0.9rem;
 }
+/* Sobre mi */
+#sobre-mi {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  margin: -50px 0px 0px 20px;
+}
+.sobre-mi-titulo {
+  font-size: 30px;
+  color: black;
+}
+.sobre-mi-texto {
+  font-size: 20px;
+  color: black;
+}
+#sobre-mi1 {
+  width: 500px;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+#sobre-mi2 {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  gap: 10px;
+}
 
-/* Tablets y pantallas más grandes */
+#sobre-mi-contac {
+  width: 500px;
+  justify-content: center;
+  max-height: 130px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  background-color: aqua;
+}
+#contact-list {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+#linkedin {
+  font-size: larger;
+}
+.github {
+  max-width: 48px;
+}
+#sobre-mi-habilities {
+  width: 500px;
+  justify-content: center;
+  max-height: 130px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  background-color: blueviolet;
+}
+#habilities-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.react {
+  max-width: 48px;
+}
+.firebase {
+  min-width: 40px;
+}
+.docker {
+  min-width: 40px;
+}
+
+/*Slider*/
+#proyectos {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 0px 280px;
+  max-height: 400px;
+  max-width: 600px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.slider {
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(200, 35, 109);
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 20s infinite; /* Ajusta el tiempo a 20s para hacerlo más lento */
+}
+
+.slides img {
+  width: 100%;
+  flex: 1 0 100%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* Ta
+blets y pantallas más grandes */
 @media (min-width: 768px) {
   .cabecera {
     flex-direction: row;
@@ -128,11 +251,11 @@ a {
 /* Pantallas grandes */
 @media (min-width: 1024px) {
   /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
-  .cabecera__titulo {
+  .cabecera-itulo {
     font-size: 1.8rem;
   }
 
-  .navegacion__elemento a {
+  .navegacion-elemento a {
     font-size: 1.1rem;
   }
 }
