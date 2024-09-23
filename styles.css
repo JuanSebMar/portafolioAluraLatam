@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
 }
+
 body {
   background-color: #0f0214;
   font-family: "Raleway", sans-serif;
@@ -36,6 +37,11 @@ li {
 a {
   text-decoration: none;
   color: white;
+}
+.cabecera {
+  padding: 2rem;
+  width: 100%;
+  position: fixed;
 }
 #presentacion-component {
   display: flex;
@@ -83,14 +89,18 @@ a {
   padding: 1rem;
   background-color: black;
 }
-
+.menu-logo {
+  display: none;
+}
 .cabecera-logo {
-  max-width: 80px; /* Ajuste para pantallas pequeñas */
+  max-width: 80px;
+  border-radius: 10px;
 }
 
 .cabecera-titulo {
   font-size: 1.2rem;
   text-align: center;
+  color: #f1f1f1;
 }
 
 .navegacion-lista {
@@ -134,6 +144,8 @@ a {
 
 #sobre-mi-contac {
   width: 500px;
+  padding: 5px;
+  margin-top: 40px;
   justify-content: center;
   max-height: 130px;
   background-color: #f1f1f1;
@@ -153,11 +165,16 @@ a {
 }
 #sobre-mi-habilities {
   width: 500px;
+  padding: 5px;
+  margin-top: 40px;
   justify-content: center;
   max-height: 130px;
   background-color: #f1f1f1;
   border-radius: 5px;
   background-color: blueviolet;
+}
+.habilities-title {
+  font-size: 30px;
 }
 #habilities-list {
   display: flex;
@@ -177,50 +194,52 @@ a {
 /*Slider*/
 #proyectos {
   display: flex;
-  justify-content: center;
-  margin: 0px 0px 0px 280px;
-  max-height: 400px;
-  max-width: 600px;
+  flex-direction: column;
+  margin: 0px 0px 0px 200px;
+  min-height: 400px;
+  max-width: 800px;
   background-color: antiquewhite;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .slider {
-  max-width: 400px;
-  overflow: hidden;
   position: relative;
-  border-radius: 10px;
-  background-color: rgb(200, 35, 109);
+  width: 100%;
+  overflow: hidden; /* Oculta las imágenes fuera del área visible */
 }
 
+/* Estilos para las slides */
 .slides {
   display: flex;
-  width: 300%;
-  animation: slide 20s infinite; /* Ajusta el tiempo a 20s para hacerlo más lento */
+  width: 100%; /* Ajusta dependiendo del número de imágenes */
+  animation: slide 10s infinite; /* Animación continua */
+}
+
+.slides li {
+  list-style: none;
+  flex: 1 1 100%;
 }
 
 .slides img {
-  width: 100%;
-  flex: 1 0 100%;
+  object-fit: contain;
+  max-height: 350px;
+  height: auto;
 }
 
+/* Animación para hacer que el slider se mueva */
 @keyframes slide {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
-  33% {
-    transform: translateX(-100%);
-  }
-  66% {
-    transform: translateX(-200%);
+  50% {
+    transform: translateX(-100%); /* Desplaza el ancho de una imagen */
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0); /* Vuelve a la primera imagen */
   }
 }
-/* Ta
-blets y pantallas más grandes */
+/* Tablets y pantallas más grandes */
 @media (min-width: 768px) {
   .cabecera {
     flex-direction: row;
