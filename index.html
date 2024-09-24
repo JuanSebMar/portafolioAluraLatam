@@ -27,27 +27,18 @@
   <body>
     <!-- Menú -->
     <header class="cabecera">
-      <img
-        class="menu-logo"
-        src="assets/menuicon.png"
-        alt="Logo" />
-      <li class="navegacion-elemento">
+      <div>
         <a href="#sobre-mi-contac">
           <img
             class="cabecera-logo"
             src="assets/alura_logo.png"
             alt="Logo" />
         </a>
-      </li>
-
-      <h1 class="cabecera-titulo">Mi portafolio - Alura Latam</h1>
+        <h1 class="cabecera-titulo">Mi portafolio - Alura Latam</h1>
+      </div>
       <nav class="navegacion">
         <ul class="navegacion-lista">
           <li class="navegacion-elemento"><a href="#sobre-mi">Sobre mí</a></li>
-
-          <li class="navegacion-elemento">
-            <a href="#formacion">Formación</a>
-          </li>
           <li class="navegacion-elemento">
             <a href="#proyectos">Proyectos</a>
           </li>
@@ -59,12 +50,14 @@
     </header>
 
     <!-- Sección de Presentación -->
-    <section class="presentacion">
+    <section
+      class="presentacion"
+      id="presentacion">
+      <img
+        id="presentacion-foto"
+        src="assets/userphoto.png"
+        alt="Foto de perfil" />
       <div id="presentacion-component">
-        <img
-          class="presentacion-foto"
-          src="assets/userphoto.png"
-          alt="Foto de perfil" />
         <h2
           id="presentacion-text"
           class="typing-effect">
@@ -185,8 +178,9 @@
     </section>
 
     <section id="proyectos">
-      <h2>Proyectos</h2>
       <div class="slider">
+        <h2>Proyectos</h2>
+
         <ul class="slides">
           <li>
             <a href="https://inquisitive-dodol-b154c1.netlify.app">
@@ -212,6 +206,35 @@
         </ul>
       </div>
     </section>
+    <footer class="pie-pagina">
+      <ul id="contact-list">
+        <li class="navegacion-elemento">
+          <a href="https://github.com/JuanSebMar">
+            <img
+              class="github"
+              src="assets/githubicon.png"
+              alt="github" />
+          </a>
+        </li>
+        <li class="navegacion-elemento">
+          <a href="https://www.linkedin.com/in/sebastian-soto-987b89208">
+            <img
+              id="linkedin"
+              src="assets/linkedinicon.png"
+              alt="linked" />
+          </a>
+        </li>
+        <li class="navegacion-elemento">
+          <a
+            href="mailto:juansebastiansotomartin@gmail.com?subject=Contacto%20desde%20mi%20portafolio&body=Hola,%20me%20gustaría%20contactar%20contigo.">
+            <img
+              class="gmail-image"
+              src="assets/gmailicon.png"
+              alt="Gmail" />
+          </a>
+        </li>
+      </ul>
+    </footer>
   </body>
   <script src="script.js"></script>
 </html>

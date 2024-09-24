@@ -6,8 +6,7 @@
 body {
   background-color: #0f0214;
   font-family: "Raleway", sans-serif;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  min-width: 100%;
 }
 /* Para WebKit browsers */
 ::-webkit-scrollbar {
@@ -33,16 +32,11 @@ ul,
 li {
   list-style: none;
 }
-
 a {
   text-decoration: none;
   color: white;
 }
-.cabecera {
-  padding: 2rem;
-  width: 100%;
-  position: fixed;
-}
+
 #presentacion-component {
   display: flex;
   align-items: center;
@@ -84,10 +78,11 @@ a {
 /* ------------------------------ Sección Menú -------------------------------*/
 .cabecera {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 98%;
   padding: 1rem;
   background-color: black;
+  justify-content: space-between;
+  align-items: center;
 }
 .menu-logo {
   display: none;
@@ -98,18 +93,23 @@ a {
 }
 
 .cabecera-titulo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+
   text-align: center;
   color: #f1f1f1;
 }
 
-.navegacion-lista {
-  display: none;
+.navegacion-elemento a {
+  font-size: 1rem;
 }
 
-.navegacion-elemento a {
-  font-size: 0.9rem;
+.navegacion-lista {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 0;
 }
+
 /* Sobre mi */
 #sobre-mi {
   display: flex;
@@ -212,7 +212,7 @@ a {
 /* Estilos para las slides */
 .slides {
   display: flex;
-  width: 100%; /* Ajusta dependiendo del número de imágenes */
+  width: 205%; /* Ajusta dependiendo del número de imágenes */
   animation: slide 10s infinite; /* Animación continua */
 }
 
@@ -222,9 +222,11 @@ a {
 }
 
 .slides img {
+  display: flex;
   object-fit: contain;
   max-height: 350px;
   height: auto;
+  border-radius: 10px;
 }
 
 /* Animación para hacer que el slider se mueva */
@@ -239,42 +241,233 @@ a {
     transform: translateX(0); /* Vuelve a la primera imagen */
   }
 }
-/* Tablets y pantallas más grandes */
-@media (min-width: 768px) {
+
+@media (max-width: 600px) {
   .cabecera {
-    flex-direction: row;
     justify-content: space-between;
+    background-color: black;
     align-items: center;
   }
 
   .cabecera-logo {
-    max-width: 100px;
+    display: none;
   }
 
   .cabecera-titulo {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    color: #f1f1f1;
+  }
+  #presentacion {
+    display: flex;
+    flex-direction: column;
+  }
+  #presentacion-foto {
+    max-width: 200px;
+  }
+
+  .typing-effect {
+    width: 100%;
+    color: white;
+    font-size: 2rem;
+    font-family: monospace;
+    overflow: hidden;
+    line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
+    animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
+    margin: 0px 0px 0px 20px;
+  }
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    90% {
+      width: 100%; /* Mantén el texto visible durante un tiempo */
+    }
+    100% {
+      width: 0; /* Haz que desaparezca para repetir */
+    }
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }
+
+  /* Sobre mi */
+  #sobre-mi {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1px;
+    padding: 1px;
+    margin: 0px 0px 0px 20px;
+  }
+  .sobre-mi-titulo {
+    font-size: 20px;
+    color: black;
+  }
+  .sobre-mi-texto {
+    font-size: 15px;
+    color: black;
+  }
+  #sobre-mi1 {
+    min-width: 200px;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+  #sobre-mi2 {
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    gap: 5px;
+  }
+
+  #sobre-mi-contac {
+    width: 500px;
+    padding: 5px;
+    margin-top: 40px;
+    justify-content: center;
+    max-height: 130px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    background-color: aqua;
+  }
+  #contact-list {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+  }
+  #linkedin {
+    font-size: larger;
+  }
+  .github {
+    max-width: 48px;
+  }
+  #sobre-mi-habilities {
+    width: 500px;
+    padding: 3px;
+    justify-content: center;
+    max-height: 100px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    background-color: blueviolet;
+  }
+  .habilities-title {
+    font-size: 20px;
+  }
+  #habilities-list {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  .react {
+    max-width: 48px;
+  }
+  .firebase {
+    min-width: 40px;
+  }
+  .docker {
+    min-width: 40px;
+  }
+
+  /*Slider*/
+  #proyectos {
+    display: flex;
+    min-width: 300px;
+    flex-direction: column;
+    margin: 0px 0px 0px 0px;
+    min-height: 400px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 2px;
+  }
+
+  .slider {
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+  }
+
+  /* Estilos para las slides */
+  .slides {
+    display: flex;
+    animation: slide 10s infinite; /* Animación continua */
+  }
+
+  .slides li {
+    list-style: none;
+    flex: 1 1 100%;
+  }
+
+  .slides img {
+    display: flex;
+    max-height: 350px;
+    border-radius: 10px;
+  }
+
+  /* Animación para hacer que el slider se mueva */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-100%); /* Desplaza el ancho de una imagen */
+    }
+    100% {
+      transform: translateX(0); /* Vuelve a la primera imagen */
+    }
+  }
+}
+
+/* @media (min-width: 601px) and (max-width: 900px) {
+  .cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cabecera-logo {
+    max-width: 50px;
+  }
+
+  .cabecera-titulo {
+    font-size: 1.3rem;
   }
 
   .navegacion-lista {
-    display: flex;
-    flex-direction: row;
     gap: 1rem;
-    margin-top: 0;
   }
 
-  .navegacion-elemento a {
-    font-size: 1rem;
-  }
-}
-
-/* Pantallas grandes */
-@media (min-width: 1024px) {
-  /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
-  .cabecera-itulo {
-    font-size: 1.8rem;
+  #sobre-mi,
+  #sobre-mi1,
+  #sobre-mi2,
+  #sobre-mi-contac,
+  #sobre-mi-habilities {
+    width: 90%;
+    margin: 0 auto;
   }
 
-  .navegacion-elemento a {
-    font-size: 1.1rem;
+  #proyectos {
+    margin: 0 auto;
+    max-width: 90%;
   }
-}
+
+  .slides {
+    width: 200%;
+  }
+
+  .slides img {
+    max-height: 300px;
+  }
+} */
