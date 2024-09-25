@@ -7,6 +7,7 @@ body {
   background-color: #0f0214;
   font-family: "Raleway", sans-serif;
   min-width: 100%;
+  overflow-x: hidden;
 }
 /* Para WebKit browsers */
 ::-webkit-scrollbar {
@@ -37,11 +38,15 @@ a {
   color: white;
 }
 
-#presentacion-component {
+#presentacion {
   display: flex;
-  align-items: center;
+}
+
+#presentacion-component {
+  margin-top: 150px;
 }
 .typing-effect {
+  display: flex;
   color: white;
   font-size: 3rem;
   font-family: monospace;
@@ -76,26 +81,26 @@ a {
   }
 }
 /* ------------------------------ Sección Menú -------------------------------*/
+
 .cabecera {
   display: flex;
+  position: fixed;
   width: 98%;
   padding: 1rem;
   background-color: black;
   justify-content: space-between;
   align-items: center;
 }
-.menu-logo {
-  display: none;
+.logo-title {
+  display: flex;
+  gap: 250px;
+  justify-content: center;
 }
 .cabecera-logo {
   max-width: 80px;
-  border-radius: 10px;
 }
 
 .cabecera-titulo {
-  font-size: 1.5rem;
-
-  text-align: center;
   color: #f1f1f1;
 }
 
@@ -123,13 +128,13 @@ a {
 }
 .sobre-mi-texto {
   font-size: 20px;
-  color: black;
+  color: white;
 }
 #sobre-mi1 {
   width: 500px;
   justify-content: center;
   padding: 2rem;
-  background-color: #f1f1f1;
+  background-color: #7a3258;
   border-radius: 5px;
 }
 #sobre-mi2 {
@@ -137,11 +142,10 @@ a {
   width: 500px;
   flex-direction: column;
   padding: 2rem;
-  background-color: #f1f1f1;
+  background-color: #ba5773;
   border-radius: 5px;
   gap: 10px;
 }
-
 #sobre-mi-contac {
   width: 500px;
   padding: 5px;
@@ -150,7 +154,7 @@ a {
   max-height: 130px;
   background-color: #f1f1f1;
   border-radius: 5px;
-  background-color: aqua;
+  background-color: #c39ad5;
 }
 #contact-list {
   justify-content: center;
@@ -171,7 +175,7 @@ a {
   max-height: 130px;
   background-color: #f1f1f1;
   border-radius: 5px;
-  background-color: blueviolet;
+  background-color: #c39ad5;
 }
 .habilities-title {
   font-size: 30px;
@@ -195,10 +199,10 @@ a {
 #proyectos {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 200px;
+  margin: 0px 0px 10px 200px;
   min-height: 400px;
   max-width: 800px;
-  background-color: antiquewhite;
+  background-color: #7a3258;
   border-radius: 10px;
   padding: 5px;
 }
@@ -241,39 +245,48 @@ a {
     transform: translateX(0); /* Vuelve a la primera imagen */
   }
 }
-
+.pie-pagina {
+  background-color: #ba5773;
+}
 @media (max-width: 600px) {
   .cabecera {
-    justify-content: space-between;
     background-color: black;
-    align-items: center;
+    position: relative;
+    align-self: baseline;
   }
-
   .cabecera-logo {
-    display: none;
+    max-width: 60px;
   }
-
   .cabecera-titulo {
-    font-size: 1rem;
-    color: #f1f1f1;
+    display: none;
   }
   #presentacion {
     display: flex;
     flex-direction: column;
+    margin-top: -50px;
+  }
+  #presentacion-div {
+    display: flex;
+    max-width: 200px;
+    max-height: 250px;
   }
   #presentacion-foto {
-    max-width: 200px;
+    display: flex;
+    align-self: center;
+  }
+  #presentacion-component {
+    margin-top: -70px;
+    align-self: center;
   }
 
   .typing-effect {
-    width: 100%;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: monospace;
     overflow: hidden;
     line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
     animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 0px;
   }
   @keyframes typing {
     0% {
@@ -304,9 +317,9 @@ a {
   #sobre-mi {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 500px;
     gap: 1px;
-    padding: 1px;
+    padding: 5px;
     margin: 0px 0px 0px 20px;
   }
   .sobre-mi-titulo {
@@ -318,7 +331,7 @@ a {
     color: black;
   }
   #sobre-mi1 {
-    min-width: 200px;
+    max-width: 200px;
     justify-content: center;
     padding: 1rem;
     background-color: #f1f1f1;
@@ -326,7 +339,7 @@ a {
   }
   #sobre-mi2 {
     display: flex;
-    width: 500px;
+    max-width: 350px;
     flex-direction: column;
     padding: 1rem;
     background-color: #f1f1f1;
@@ -335,7 +348,7 @@ a {
   }
 
   #sobre-mi-contac {
-    width: 500px;
+    max-width: 200px;
     padding: 5px;
     margin-top: 40px;
     justify-content: center;
@@ -350,13 +363,13 @@ a {
     gap: 10px;
   }
   #linkedin {
-    font-size: larger;
+    font-size: 28px;
   }
   .github {
-    max-width: 48px;
+    max-width: 28px;
   }
   #sobre-mi-habilities {
-    width: 500px;
+    max-width: 200px;
     padding: 3px;
     justify-content: center;
     max-height: 100px;
@@ -385,7 +398,7 @@ a {
   /*Slider*/
   #proyectos {
     display: flex;
-    min-width: 300px;
+    max-width: 500px;
     flex-direction: column;
     margin: 0px 0px 0px 0px;
     min-height: 400px;
