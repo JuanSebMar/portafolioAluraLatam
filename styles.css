@@ -204,10 +204,11 @@ a {
   max-width: 800px;
   background-color: #7a3258;
   border-radius: 10px;
-  padding: 5px;
+  padding: 20px;
 }
 
 .slider {
+  border-radius: 10px;
   position: relative;
   width: 100%;
   overflow: hidden; /* Oculta las imágenes fuera del área visible */
@@ -217,19 +218,18 @@ a {
 .slides {
   display: flex;
   width: 205%; /* Ajusta dependiendo del número de imágenes */
-  animation: slide 10s infinite; /* Animación continua */
+  animation: slide 10s infinite;
 }
 
 .slides li {
   list-style: none;
   flex: 1 1 100%;
+  padding: 5px;
 }
 
 .slides img {
   display: flex;
-  object-fit: contain;
   max-height: 350px;
-  height: auto;
   border-radius: 10px;
 }
 
@@ -250,9 +250,8 @@ a {
 }
 @media (max-width: 600px) {
   .cabecera {
+    padding: 5px;
     background-color: black;
-    position: relative;
-    align-self: baseline;
   }
   .cabecera-logo {
     max-width: 60px;
@@ -260,33 +259,29 @@ a {
   .cabecera-titulo {
     display: none;
   }
+
   #presentacion {
     display: flex;
     flex-direction: column;
-    margin-top: -50px;
   }
-  #presentacion-div {
-    display: flex;
-    max-width: 200px;
-    max-height: 250px;
-  }
+
   #presentacion-foto {
     display: flex;
     align-self: center;
+    margin-left: 100px;
   }
   #presentacion-component {
-    margin-top: -70px;
-    align-self: center;
+    margin-top: -110px;
   }
 
   .typing-effect {
+    margin-left: 30px;
     color: white;
     font-size: 2.5rem;
     font-family: monospace;
     overflow: hidden;
     line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
     animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
-    margin: 0px 0px 0px 0px;
   }
   @keyframes typing {
     0% {
@@ -302,25 +297,13 @@ a {
       width: 0; /* Haz que desaparezca para repetir */
     }
   }
-
-  @keyframes blink {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: black;
-    }
-  }
-
   /* Sobre mi */
   #sobre-mi {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    gap: 1px;
+    gap: 2px;
     padding: 5px;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 10px;
   }
   .sobre-mi-titulo {
     font-size: 20px;
@@ -331,7 +314,7 @@ a {
     color: black;
   }
   #sobre-mi1 {
-    max-width: 200px;
+    max-width: 450px;
     justify-content: center;
     padding: 1rem;
     background-color: #f1f1f1;
@@ -339,7 +322,7 @@ a {
   }
   #sobre-mi2 {
     display: flex;
-    max-width: 350px;
+    max-width: 450px;
     flex-direction: column;
     padding: 1rem;
     background-color: #f1f1f1;
@@ -348,9 +331,8 @@ a {
   }
 
   #sobre-mi-contac {
-    max-width: 200px;
-    padding: 5px;
-    margin-top: 40px;
+    max-width: 450px;
+    padding: 3px;
     justify-content: center;
     max-height: 130px;
     background-color: #f1f1f1;
@@ -366,10 +348,10 @@ a {
     font-size: 28px;
   }
   .github {
-    max-width: 28px;
+    max-width: 48px;
   }
   #sobre-mi-habilities {
-    max-width: 200px;
+    max-width: 450px;
     padding: 3px;
     justify-content: center;
     max-height: 100px;
@@ -398,13 +380,13 @@ a {
   /*Slider*/
   #proyectos {
     display: flex;
-    max-width: 500px;
+    min-width: 473px;
     flex-direction: column;
-    margin: 0px 0px 0px 0px;
-    min-height: 400px;
+    margin: 10px 0px 10px 15px;
+    max-height: 300px;
     background-color: antiquewhite;
-    border-radius: 10px;
-    padding: 2px;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   .slider {
@@ -439,6 +421,9 @@ a {
     100% {
       transform: translateX(0); /* Vuelve a la primera imagen */
     }
+  }
+  .pie-pagina {
+    width: 120vw;
   }
 }
 
