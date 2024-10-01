@@ -11,21 +11,21 @@ body {
 }
 /* Para WebKit browsers */
 ::-webkit-scrollbar {
-  width: 12px; /* Ancho del scrollbar */
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color del track del scrollbar */
+  background: #f1f1f1;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000; /* Color del thumb del scrollbar */
-  border-radius: 6px; /* Bordes redondeados para el thumb */
+  background: #000;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #000; /* Color del thumb al pasar el mouse */
+  background: #000;
 }
 
 ol,
@@ -43,7 +43,7 @@ a {
 }
 
 #presentacion-component {
-  margin-top: 150px;
+  margin-top: 160px;
 }
 .typing-effect {
   display: flex;
@@ -90,6 +90,7 @@ a {
   background-color: black;
   justify-content: space-between;
   align-items: center;
+  z-index: 9999;
 }
 .logo-title {
   display: flex;
@@ -199,7 +200,8 @@ a {
 #proyectos {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 10px 200px;
+  align-self: center;
+  margin: 0px 0px 10px 160px;
   min-height: 400px;
   max-width: 800px;
   background-color: #7a3258;
@@ -212,6 +214,7 @@ a {
   position: relative;
   width: 100%;
   overflow: hidden; /* Oculta las imágenes fuera del área visible */
+  z-index: 1;
 }
 
 /* Estilos para las slides */
@@ -248,9 +251,13 @@ a {
 .pie-pagina {
   background-color: #ba5773;
 }
-@media (max-width: 600px) {
+@media (max-width: 760px) {
+  * {
+    padding-right: 5px;
+    margin: 0;
+  }
   .cabecera {
-    padding: 5px;
+    width: 100%;
     background-color: black;
   }
   .cabecera-logo {
@@ -262,20 +269,18 @@ a {
 
   #presentacion {
     display: flex;
-    flex-direction: column;
   }
 
   #presentacion-foto {
     display: flex;
     align-self: center;
-    margin-left: 100px;
   }
   #presentacion-component {
-    margin-top: -110px;
+    margin-left: -20px;
   }
 
   .typing-effect {
-    margin-left: 30px;
+    margin: 0;
     color: white;
     font-size: 2.5rem;
     font-family: monospace;
@@ -300,8 +305,189 @@ a {
   /* Sobre mi */
   #sobre-mi {
     display: flex;
-    flex-direction: column;
     gap: 2px;
+    padding: 5px;
+    margin: 0px 0px 0px 10px;
+  }
+  .sobre-mi-titulo {
+    font-size: 20px;
+    color: black;
+  }
+  .sobre-mi-texto {
+    font-size: 15px;
+    color: white;
+  }
+  #sobre-mi1 {
+    min-width: 400px;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #7a3258;
+    border-radius: 5px;
+  }
+  #sobre-mi2 {
+    max-width: 400px;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #7a3258;
+    border-radius: 5px;
+    gap: 5px;
+  }
+
+  #sobre-mi-contac {
+    max-width: 390px;
+    padding: 3px;
+    justify-content: center;
+    max-height: 130px;
+    border-radius: 5px;
+    background-color: #c39ad5;
+  }
+  #contact-list {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+  }
+  #linkedin {
+    font-size: 28px;
+  }
+  .github {
+    max-width: 48px;
+  }
+  #sobre-mi-habilities {
+    max-width: 390px;
+    padding: 3px;
+    justify-content: center;
+    max-height: 100px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    background-color: blueviolet;
+  }
+  .habilities-title {
+    font-size: 20px;
+  }
+  #habilities-list {
+    object-fit: contain;
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+  }
+  .react {
+    max-width: 48px;
+  }
+  .firebase {
+    display: none;
+  }
+  .docker {
+    display: none;
+  }
+
+  /*Slider*/
+  #proyectos {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 0px 120px;
+    min-height: 280px;
+    background-color: #7a3258;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .slider {
+    overflow: hidden; /* Oculta las imágenes fuera del área visible */
+  }
+
+  /* Estilos para las slides */
+  .slides {
+    display: flex;
+    animation: slide 10s infinite; /* Animación continua */
+  }
+
+  .slides li {
+    list-style: none;
+    flex: 1 1 100%;
+  }
+
+  .slides img {
+    display: flex;
+    max-height: 250px;
+    border-radius: 10px;
+  }
+
+  /* Animación para hacer que el slider se mueva */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .pie-pagina {
+    width: 120vw;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .cabecera {
+    padding: 5px;
+    background-color: black;
+  }
+  .cabecera-logo {
+    max-width: 60px;
+  }
+  .cabecera-titulo {
+    display: none;
+  }
+
+  #presentacion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #presentacion-foto {
+    display: flex;
+    align-self: center;
+    margin-left: 200px;
+  }
+  #presentacion-component {
+    margin-top: -110px;
+  }
+
+  .typing-effect {
+    align-self: center;
+    padding: 10px;
+    margin-left: 50px;
+    color: white;
+    font-size: 1.8rem;
+    font-family: monospace;
+    line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
+    animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
+  }
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    90% {
+      width: 100%;
+    }
+    95% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  /* Sobre mi */
+  #sobre-mi {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 5px;
     margin: 0px 0px 0px 10px;
   }
@@ -326,18 +512,17 @@ a {
     flex-direction: column;
     padding: 1rem;
     background-color: #7a3258;
-
     border-radius: 5px;
     gap: 5px;
   }
 
   #sobre-mi-contac {
     max-width: 450px;
-    padding: 3px;
     justify-content: center;
-    max-height: 130px;
+    max-height: 110px;
     border-radius: 5px;
     background-color: #c39ad5;
+    margin-top: 0px;
   }
   #contact-list {
     justify-content: center;
@@ -348,7 +533,7 @@ a {
     font-size: 28px;
   }
   .github {
-    max-width: 48px;
+    max-width: 43px;
   }
   #sobre-mi-habilities {
     max-width: 450px;
@@ -358,20 +543,22 @@ a {
     background-color: #f1f1f1;
     border-radius: 5px;
     background-color: blueviolet;
+    margin-top: 0px;
+    object-fit: contain;
   }
   .habilities-title {
     font-size: 20px;
   }
   #habilities-list {
     display: flex;
-    gap: 5px;
+    gap: 1px;
     justify-content: center;
   }
   .react {
     max-width: 48px;
   }
   .firebase {
-    min-width: 40px;
+    display: none;
   }
   .docker {
     min-width: 40px;
@@ -380,14 +567,12 @@ a {
   /*Slider*/
   #proyectos {
     display: flex;
-    min-width: 473px;
+    min-width: 472px;
     flex-direction: column;
     margin: 10px 0px 10px 15px;
-    max-height: 300px;
+    min-height: 200px;
     background-color: #7a3258;
-
     border-radius: 5px;
-    padding: 5px;
   }
 
   .slider {
@@ -396,6 +581,7 @@ a {
 
   /* Estilos para las slides */
   .slides {
+    padding: 5px;
     display: flex;
     animation: slide 10s infinite; /* Animación continua */
   }
@@ -407,7 +593,8 @@ a {
 
   .slides img {
     display: flex;
-    max-height: 350px;
+    max-width: 500px;
+    max-height: 200px;
     border-radius: 10px;
   }
 
@@ -417,13 +604,13 @@ a {
       transform: translateX(0);
     }
     50% {
-      transform: translateX(-100%); /* Desplaza el ancho de una imagen */
+      transform: translateX(-100%);
     }
     100% {
-      transform: translateX(0); /* Vuelve a la primera imagen */
+      transform: translateX(0);
     }
   }
   .pie-pagina {
-    width: 120vw;
+    min-width: 166vw;
   }
 }
