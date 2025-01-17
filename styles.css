@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
 body {
@@ -46,14 +47,12 @@ a {
   margin-top: 160px;
 }
 .typing-effect {
-  display: flex;
   color: white;
   font-size: 3rem;
   font-family: monospace;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  line-height: 1; /* Ajusta la altura de la línea para que coincida con el texto */
   animation: typing 5s steps(30, end) infinite, blink 0.75s step-end infinite;
 }
 @keyframes typing {
@@ -199,19 +198,18 @@ a {
 /*Slider*/
 #proyectos {
   display: flex;
+  justify-self: center;
   flex-direction: column;
-  align-self: center;
-  margin: 0px 0px 10px 160px;
   min-height: 400px;
   max-width: 800px;
   background-color: #7a3258;
   border-radius: 10px;
+  margin: 20px;
   padding: 20px;
 }
 
 .slider {
   border-radius: 10px;
-  position: relative;
   width: 100%;
   overflow: hidden; /* Oculta las imágenes fuera del área visible */
   z-index: 1;
@@ -220,7 +218,7 @@ a {
 /* Estilos para las slides */
 .slides {
   display: flex;
-  width: 205%; /* Ajusta dependiendo del número de imágenes */
+  width: 100vw; /* Ajusta dependiendo del número de imágenes */
   animation: slide 10s infinite;
 }
 
@@ -239,13 +237,13 @@ a {
 /* Animación para hacer que el slider se mueva */
 @keyframes slide {
   0% {
-    transform: translateX(0);
+    transform: translateX(50%);
   }
   50% {
-    transform: translateX(-100%); /* Desplaza el ancho de una imagen */
+    transform: translateX(-80%); /* Desplaza el ancho de una imagen */
   }
   100% {
-    transform: translateX(0); /* Vuelve a la primera imagen */
+    transform: translateX(40%); /* Vuelve a la primera imagen */
   }
 }
 .pie-pagina {
