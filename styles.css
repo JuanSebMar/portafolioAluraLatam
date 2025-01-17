@@ -102,6 +102,7 @@ a {
 
 .cabecera-titulo {
   color: #f1f1f1;
+  justify-items: center;
 }
 
 .navegacion-elemento a {
@@ -218,7 +219,7 @@ a {
 /* Estilos para las slides */
 .slides {
   display: flex;
-  width: 100vw; /* Ajusta dependiendo del número de imágenes */
+  width: 100vw;
   animation: slide 10s infinite;
 }
 
@@ -237,7 +238,7 @@ a {
 /* Animación para hacer que el slider se mueva */
 @keyframes slide {
   0% {
-    transform: translateX(50%);
+    transform: translateX(40%);
   }
   50% {
     transform: translateX(-80%); /* Desplaza el ancho de una imagen */
