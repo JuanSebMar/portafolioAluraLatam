@@ -125,7 +125,7 @@ a {
 }
 .sobre-mi-titulo {
   font-size: 30px;
-  color: black;
+  color: #fff;
 }
 .sobre-mi-texto {
   font-size: 20px;
@@ -180,6 +180,7 @@ a {
 }
 .habilities-title {
   font-size: 30px;
+  color: #fff;
 }
 #habilities-list {
   display: flex;
